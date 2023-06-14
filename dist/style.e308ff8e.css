@@ -209,6 +209,12 @@ main header {
   .container .menu {
     margin-top: 5px;
   }
+  .container .menu button:hover {
+    background: var(--secondary);
+  }
+  .container .menu button:hover svg path {
+    fill: #fff;
+  }
 
   #overlay {
     width: 232px;
