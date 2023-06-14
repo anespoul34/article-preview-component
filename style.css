@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+:root {
+  --font: 'Manrope', sans-serif;
+  --f-size: 13px;
+  --primary: hsl(217, 19%, 35%);
+  --secondary: hsl(214, 17%, 51%);
+  --white: hsl(0, 0%, 100%);
+  --light: hsl(210, 46%, 95%);
+  --dark:  hsl(212, 23%, 69%);
+  --black: hsl(0, 0%, 8%);
+  font-size: var(--f-size);
+}
+* {
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+}
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--light);
+}
+h1, h2, p {
+  font-family: var(--font);
+  margin: 0;
+}
+h1 {
+  font-size: 1.3rem;
+  color: var(--primary);
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 18px;
+}
+h2 {
+  font-size: 1.1rem;
+  color: var(--primary);
+  font-weight: 700;
+}
+p {
+  font-size: 1rem;
+  color: var(--secondary);
+  font-weight: 500;
+  text-align: left;
+  line-height: 1.7;
+}
+.attribution {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  font-family: var(--font);
+  color: var(--primary);
+  text-align: center;
+  font-size: 1rem;
+  margin: 10px 0;
+  z-index: 1;
+}
+.attribution a {
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--black);
+}
+
+main {
+  width: 330px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px -20px var(--dark);
+}
+
+main header {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  height: 200px;
+}
+
+.header-img {
+  width: 100%;
+  margin-top: -20px;
+}
+
+.container {
+  position: relative;
+  padding: 40px 30px 20px;
+}
+.container .menu {
+  width: 100%;
+  height: 44px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+}
+.container .menu .profil-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.container .menu .profil-img img {
+  width: 100%;
+}
+.container .menu .infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex: 1 0 auto;
+  gap: 2px;
+  padding: 0 10px;
+}
+.container .menu button,
+#overlay button {
+  cursor: pointer;
+  width: 34px;
+  height: 34px;
+  border-radius: 17px;
+  border: none;
+  background: var(--light);
+}
+
+#overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 84px;
+  width: 0%;
+  background: var(--primary);
+  overflow: hidden;
+}
+#overlay.show {
+  width: 100%;
+}
+#overlay .wrapper {
+  width: 330px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+}
+#overlay .wrapper .left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+}
+#overlay .wrapper .left img {
+  width: 20px;
+  height: 20px;
+}
+#overlay .wrapper .left p {
+  text-transform: uppercase;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--dark);
+  letter-spacing: 4px;
+}
+#overlay button {
+  background: var(--secondary);
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    flex-direction: row;
+    width: 695px;
+    height: 260px;
+    overflow: visible;
+  }
+  main header {
+    min-width: 260px;
+    height: 100%;
+    justify-content: flex-start;
+    border-radius: 10px 0 0 10px;
+  }
+  .header-img {
+    width: auto;
+    height: 100%;
+    margin: 0;
+  }
+  h1 {
+    margin: 0;
+    padding-right: 40px;
+  }
+  .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30px 40px;
+  }
+  .container .menu {
+    margin-top: 5px;
+  }
+
+  #overlay {
+    width: 232px;
+    height: 0;
+    bottom: 68px;
+    left: auto;
+    right: -58px;
+    overflow: hidden;
+    background: transparent;
+  }
+  #overlay.show {
+    width: 232px;
+    height: 70px;
+    border-radius: 8px;
+    overflow: visible;
+  }
+  #overlay .wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    border-radius: 8px;
+    justify-content: center;
+    background: var(--primary);
+  }
+  #overlay.show .wrapper {
+    height: 50px;
+    box-shadow: 0 5px 20px -10px var(--dark);
+  }
+  #overlay .wrapper::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -7px;
+    left: 50%;
+    width: 0px;
+    height: 0px;
+    background: linear-gradient(-45deg, var(--primary) 50%, transparent 50%);
+    transform: translateX(-7px) rotate(45deg);
+    transition: all 0.1s 0.2s ease;
+  }
+  #overlay.show .wrapper::after {
+    width: 14px;
+    height: 14px;
+    transition: all 0.05s ease;
+  }
+  #overlay button {
+    display: none;
+  }
+}
