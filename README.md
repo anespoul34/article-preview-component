@@ -27,8 +27,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [link](link)
-- Live Site URL: [link](link)
+- Solution URL: [link](https://www.frontendmentor.io/solutions/article-preview-component-using-basic-htmlcss-QYNqFhYGfG)
+- Live Site URL: [link](https://article-preview-component-drab-six.vercel.app/)
 
 ## My process
 
